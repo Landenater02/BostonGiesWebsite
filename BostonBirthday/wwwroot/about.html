@@ -1,0 +1,79 @@
+﻿<!-- about.html (About Me page) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Boston Geo – About Me</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="site-title">Boston Geo</div>
+        <nav class="site-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About Me</a>
+            <a href="updates.html">Updates</a>
+        </nav>
+    </header>
+
+    <main class="page about-page">
+
+        <!-- Top row: Pic + Fun Bio -->
+        <section class="section about-grid-top">
+            <aside class="card about-photo">
+                <div class="photo-placeholder">Main Photo of Me</div>
+            </aside>
+
+            <article id="full-bio" class="card full-bio">
+                <h1>Fun Bio</h1>
+                <p>
+                    I’m Boston Geo – producer, trumpet player, and professional over-thinker
+                    of chord progressions. I grew up obsessed with movie soundtracks and
+                    video-game music, which slowly mutated into a love for jazz harmony and
+                    electronic production.
+                </p>
+                <p>
+                    Most of my tracks start as ideas on a beat-up keyboard or a trumpet
+                    line I can’t get out of my head. From there I build layers of drums,
+                    synths, and textures until it feels like its own little world.
+                </p>
+                <p>
+                    When I’m not writing or recording, I’m probably at a show, hanging out
+                    in a practice room, or mixing for friends. I like collaborators who are
+                    curious, a little weird, and not afraid to try something that might fail
+                    spectacularly.
+                </p>
+            </article>
+        </section>
+
+        <!-- Bottom row: Interests / Composition box -->
+        <section class="section about-grid-bottom">
+            <article class="card interests-card">
+                <h2>Things I’m Interested In</h2>
+                <ul>
+                    <li>Experimental jazz harmony and lush extended chords</li>
+                    <li>Combining acoustic instruments with glitchy electronic textures</li>
+                    <li>Trumpet, flugelhorn, and brass arrangement</li>
+                    <li>Game and film composition – especially moody, atmospheric cues</li>
+                    <li>Concept albums built around a story or fictional city</li>
+                    <li>Collaborating with singers, rappers, and instrumentalists</li>
+                </ul>
+                <p>
+                    I’m especially interested in doing more <strong>
+                        composition for short films,
+                        games, and animation
+                    </strong>. If that’s your world, definitely reach out.
+                </p>
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© <span id="year-about"></span> Boston Geo. All rights reserved.</p>
+    </footer>
+
+    <script>
+  document.getElementById('year-about').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

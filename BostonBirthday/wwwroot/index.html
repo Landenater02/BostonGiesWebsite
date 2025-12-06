@@ -1,211 +1,114 @@
-﻿<style>
+﻿<!-- index.html  (Home) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Boston Geo – Home</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="site-title">Boston Geo</div>
+        <nav class="site-nav">
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="updates.html">Updates</a>
+        </nav>
+    </header>
 
-    body {
-        margin: 0;
-        background: #020202;
-        cursor: crosshair;
-    }
+    <main class="page home-page">
 
-    canvas {
-        position:absolute;
-        top: 0;
-        z-index: -999;
-    }
+        <!-- 1. Bio + Headshot row -->
+        <section class="section hero-grid">
+            <article class="card hero-bio">
+                <h2>Short Bio</h2>
+                <p>
+                    I’m Boston, a composer and multi-instrumentalist who spends most of his
+                    time writing music, tinkering with sounds, and drinking far too much coffee.
+                    I love blending jazz harmony with electronic textures and turning small
+                    melodic ideas into big emotional tracks.
+                </p>
+                <p>
+                    When I’m not making music, you’ll probably find me wandering thrift stores,
+                    hunting for weird records, or annoying friends with music theory facts.
+                </p>
+                <a class="more-link" href="about.html#full-bio">Read full bio →</a>
+            </article>
 
-    h1 {
-       
-       
-        color: #fff;
-        font-family: "Source Sans Pro";
-        font-size: 5em;
-        font-weight: 900;
-        -webkit-user-select: none;
-        user-select: none;
-    }
+            <aside class="card hero-photo">
+                <div class="photo-placeholder">Headshot<br />Goes Here</div>
+            </aside>
+        </section>
 
-    h2 {
-        
-        
-        color: #fff;
-        font-family: "Source Sans Pro";
-        font-size: 5em;
-        font-weight: 900;
-        -webkit-user-select: none;
-        user-select: none;
-    }
+        <!-- 2. SoundCloud widget row -->
+        <section class="section music-row">
+            <article class="card soundcloud-card">
+                <h2>Latest Track</h2>
+                <p class="muted">
+                    Embedded SoundCloud player goes here. Replace the iframe with your real widget.
+                </p>
+                <div class="soundcloud-embed-placeholder">
+                    <span>SoundCloud Widget</span>
+                </div>
+            </article>
 
-    img {
-      
-        width:25rem;
-        height:auto;
-       
-    }
+            <article class="card track-notes">
+                <h3>About This Track</h3>
+                <p>
+                    “City After Midnight” started as a piano loop I recorded on my phone.
+                    It grew into a full track with layered horns, analog synths, and
+                    chopped-up drum samples. The goal was to capture that feeling of
+                    walking home way too late with headphones on.
+                </p>
+                <p>
+                    I’m experimenting with more live trumpet and sax parts in future
+                    releases, so expect a lot more horn-heavy music soon.
+                </p>
+            </article>
+        </section>
 
-</style>
+        <!-- 3. Social links + extra picture -->
+        <section class="section social-row">
+            <div class="social-icons">
+                <a href="#" aria-label="YouTube">
+                    ▶
+                </a>
+                <a href="#" aria-label="Instagram">
+                    ⦿
+                </a>
+                <a href="#" aria-label="SoundCloud">
+                    SC
+                </a>
+            </div>
 
-<div style="display:flex; width:100%; margin:auto; flex-direction:column;justify-content:center;align-items:center; align-content:center;">
-    <h1>Happy Birthday</h1>
-    <h2>Boston John Gies</h2>
-    <img src="/Boston.jpg" alt="My image">
-</div>
-<canvas id="birthday"></canvas>
-<script>
-    // helper functions
-    const PI2 = Math.PI * 2
-    const random = (min, max) => Math.random() * (max - min + 1) + min | 0
-    const timestamp = _ => new Date().getTime()
+            <div class="card wide-photo">
+                <div class="photo-placeholder">Wide photo of me / live show</div>
+            </div>
+        </section>
 
-    // container
-    class Birthday {
-        constructor() {
-            this.resize()
+        <!-- 4. Email list -->
+        <section class="section email-section">
+            <div class="card email-card">
+                <h2>Email List Subscription</h2>
+                <p>
+                    Get a quick note when I release new tracks, post behind-the-scenes demos,
+                    or announce shows. No spam, just music-related stuff.
+                </p>
+                <form class="email-form">
+                    <label for="email-home" class="sr-only">Email address</label>
+                    <input id="email-home" type="email" placeholder="you@example.com" required />
+                    <button type="submit">Join the list</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
-            // create a lovely place to store the firework
-            this.fireworks = []
-            this.counter = 0
+    <footer class="site-footer">
+        <p>© <span id="year-home"></span> Boston Geo. All rights reserved.</p>
+    </footer>
 
-        }
-
-        resize() {
-            this.width = canvas.width = window.innerWidth
-            let center = this.width / 2 | 0
-            this.spawnA = center - center / 4 | 0
-            this.spawnB = center + center / 4 | 0
-
-            this.height = canvas.height = window.innerHeight
-            this.spawnC = this.height * .1
-            this.spawnD = this.height * .5
-
-        }
-
-        onClick(evt) {
-            let x = evt.clientX || evt.touches && evt.touches[0].pageX
-            let y = evt.clientY || evt.touches && evt.touches[0].pageY
-
-            let count = random(3, 5)
-            for (let i = 0; i < count; i++) this.fireworks.push(new Firework(
-                random(this.spawnA, this.spawnB),
-                this.height,
-                x,
-                y,
-                random(0, 260),
-                random(30, 110)))
-
-            this.counter = -1
-
-        }
-
-        update(delta) {
-            ctx.globalCompositeOperation = 'hard-light'
-            ctx.fillStyle = `rgba(20,20,20,${7 * delta})`
-            ctx.fillRect(0, 0, this.width, this.height)
-
-            ctx.globalCompositeOperation = 'lighter'
-            for (let firework of this.fireworks) firework.update(delta)
-
-            // if enough time passed... create new new firework
-            this.counter += delta * 3 // each second
-            if (this.counter >= 1) {
-                this.fireworks.push(new Firework(
-                    random(this.spawnA, this.spawnB),
-                    this.height,
-                    random(0, this.width),
-                    random(this.spawnC, this.spawnD),
-                    random(0, 360),
-                    random(30, 110)))
-                this.counter = 0
-            }
-
-            // remove the dead fireworks
-            if (this.fireworks.length > 1000) this.fireworks = this.fireworks.filter(firework => !firework.dead)
-
-        }
-    }
-
-    class Firework {
-        constructor(x, y, targetX, targetY, shade, offsprings) {
-            this.dead = false
-            this.offsprings = offsprings
-
-            this.x = x
-            this.y = y
-            this.targetX = targetX
-            this.targetY = targetY
-
-            this.shade = shade
-            this.history = []
-        }
-        update(delta) {
-            if (this.dead) return
-
-            let xDiff = this.targetX - this.x
-            let yDiff = this.targetY - this.y
-            if (Math.abs(xDiff) > 3 || Math.abs(yDiff) > 3) { // is still moving
-                this.x += xDiff * 2 * delta
-                this.y += yDiff * 2 * delta
-
-                this.history.push({
-                    x: this.x,
-                    y: this.y
-                })
-
-                if (this.history.length > 20) this.history.shift()
-
-            } else {
-                if (this.offsprings && !this.madeChilds) {
-
-                    let babies = this.offsprings / 2
-                    for (let i = 0; i < babies; i++) {
-                        let targetX = this.x + this.offsprings * Math.cos(PI2 * i / babies) | 0
-                        let targetY = this.y + this.offsprings * Math.sin(PI2 * i / babies) | 0
-
-                        birthday.fireworks.push(new Firework(this.x, this.y, targetX, targetY, this.shade, 0))
-
-                    }
-
-                }
-                this.madeChilds = true
-                this.history.shift()
-            }
-
-            if (this.history.length === 0) this.dead = true
-            else if (this.offsprings) {
-                for (let i = 0; this.history.length > i; i++) {
-                    let point = this.history[i]
-                    ctx.beginPath()
-                    ctx.fillStyle = 'hsl(' + this.shade + ',100%,' + i + '%)'
-                    ctx.arc(point.x, point.y, 1, 0, PI2, false)
-                    ctx.fill()
-                }
-            } else {
-                ctx.beginPath()
-                ctx.fillStyle = 'hsl(' + this.shade + ',100%,50%)'
-                ctx.arc(this.x, this.y, 1, 0, PI2, false)
-                ctx.fill()
-            }
-
-        }
-    }
-
-    let canvas = document.getElementById('birthday')
-    let ctx = canvas.getContext('2d')
-
-    let then = timestamp()
-
-    let birthday = new Birthday
-    window.onresize = () => birthday.resize()
-    document.onclick = evt => birthday.onClick(evt)
-    document.ontouchstart = evt => birthday.onClick(evt)
-
-        ; (function loop() {
-            requestAnimationFrame(loop)
-
-            let now = timestamp()
-            let delta = now - then
-
-            then = now
-            birthday.update(delta / 1000)
-
-
-        })()
-</script>
+    <script>
+        document.getElementById('year-home').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+﻿<!-- updates.html (Updates page) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Boston Geo – Updates</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="site-title">Boston Geo</div>
+        <nav class="site-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="updates.html" class="active">Updates</a>
+        </nav>
+    </header>
+
+    <main class="page updates-page">
+        <section class="section updates-grid">
+
+            <!-- Left: Updates feed -->
+            <article class="card updates-list">
+                <h1>Updates</h1>
+
+                <article class="update-item">
+                    <h2>New Single: “Neon Stairwell”</h2>
+                    <p class="muted">Posted March 3, 2026</p>
+                    <p>
+                        Just dropped a new track that leans heavily into analog synths and
+                        big trumpet lines. I tried to capture the feeling of climbing the
+                        same stairwell every night after a gig.
+                    </p>
+                </article>
+
+                <article class="update-item">
+                    <h2>Live Show – Small Room Sessions</h2>
+                    <p class="muted">Posted February 20, 2026</p>
+                    <p>
+                        Playing a stripped-down set with keys, trumpet, and loops. I’ll be
+                        testing out a bunch of unreleased material and improvising transitions
+                        between tracks.
+                    </p>
+                </article>
+
+                <article class="update-item">
+                    <h2>Looking for Visual Artists</h2>
+                    <p class="muted">Posted February 5, 2026</p>
+                    <p>
+                        I’m trying to build a small crew of visual artists and animators to
+                        collaborate on cover art, motion loops, and maybe even a short film
+                        to go with an EP. If that sounds like you, send me a message.
+                    </p>
+                </article>
+            </article>
+
+            <!-- Right: Instagram widget -->
+            <aside class="card instagram-card">
+                <h2>Instagram Widget</h2>
+                <p class="muted">
+                    This area is reserved for an Instagram embed – grid of recent posts
+                    or a single highlighted post.
+                </p>
+                <div class="instagram-placeholder">
+                    <div class="insta-square"></div>
+                    <div class="insta-square"></div>
+                    <div class="insta-square"></div>
+                    <div class="insta-square"></div>
+                    <div class="insta-square"></div>
+                    <div class="insta-square"></div>
+                </div>
+                <a href="#" class="more-link">View on Instagram →</a>
+            </aside>
+        </section>
+
+        <!-- Bottom: Email list -->
+        <section class="section email-section">
+            <div class="card email-card">
+                <h2>Email List</h2>
+                <p>
+                    Want updates without having to fight the algorithm? Drop your email
+                    and I’ll send occasional notes about releases, shows, and works-in-progress.
+                </p>
+                <form class="email-form">
+                    <label for="email-updates" class="sr-only">Email address</label>
+                    <input id="email-updates" type="email" placeholder="you@example.com" required />
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© <span id="year-updates"></span> Boston Geo. All rights reserved.</p>
+    </footer>
+
+    <script>
+  document.getElementById('year-updates').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
