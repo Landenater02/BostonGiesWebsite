@@ -1,9 +1,18 @@
 ﻿/* styles.css – shared basic styling for all three pages */
 
+@font-face {
+    font-family: "Terraria";
+    src: url("/ANDYB.TTF") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
 :root {
     --bg: #050509;
-    --card-bg: #111118;
-    --accent: #ff6b3b;
+    --card-bg: #000099;
+    --accent: #2596be;
     --accent-soft: rgba(255, 107, 59, 0.2);
     --text: #f5f5f5;
     --muted: #9b9bb2;
@@ -43,10 +52,11 @@ body {
 }
 
 .site-title {
-    font-weight: 700;
+    font-weight: 700; 
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 1.75rem;
+    font-family: Terraria;
 }
 
 .site-nav a {
@@ -89,7 +99,7 @@ body {
 }
 
 .card {
-    background: linear-gradient(135deg, #111118 0, #0a0a11 60%);
+    background: linear-gradient(180deg, #111118 80%,#000435 125%);
     border-radius: var(--radius);
     border: 1px solid var(--border);
     box-shadow: var(--shadow);
@@ -173,8 +183,16 @@ body {
     gap: 0.8rem;
     justify-content: flex-start;
     flex-wrap: wrap;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
 }
-
+    .social-icons a img {
+        width: 3rem;
+      
+    }
     .social-icons a {
         width: 42px;
         height: 42px;
