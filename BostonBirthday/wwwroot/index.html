@@ -3,12 +3,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>Boston Geo – Home</title>
+    <title>Boston Gies – Home</title>
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
     <header class="site-header">
-        <div class="site-title">Boston Geo</div>
+        <div class="site-title">Boston Gies</div>
         <nav class="site-nav">
             <a href="index.html" class="active">Home</a>
             <a href="about.html">About Me</a>
@@ -36,7 +36,7 @@
             </article>
 
             <aside class="card hero-photo">
-                <div class="photo-placeholder">Headshot<br />Goes Here</div>
+                <img class="photo-placeholder" src="/bostongiesheadshot.png" />
             </aside>
         </section>
 
@@ -44,27 +44,34 @@
         <section class="section music-row">
             <article class="card soundcloud-card">
                 <h2>Latest Track</h2>
-                <p class="muted">
-                    Embedded SoundCloud player goes here. Replace the iframe with your real widget.
-                </p>
-                <div class="soundcloud-embed-placeholder">
-                    <span>SoundCloud Widget</span>
-                </div>
-            </article>
 
-            <article class="card track-notes">
-                <h3>About This Track</h3>
-                <p>
-                    “City After Midnight” started as a piano loop I recorded on my phone.
-                    It grew into a full track with layered horns, analog synths, and
-                    chopped-up drum samples. The goal was to capture that feeling of
-                    walking home way too late with headphones on.
-                </p>
-                <p>
-                    I’m experimenting with more live trumpet and sax parts in future
-                    releases, so expect a lot more horn-heavy music soon.
+                <iframe width="100%"
+                        height="300"
+                        scrolling="no"
+                        frameborder="no"
+                        allow="autoplay"
+                        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bobston-67199047&color=%23ff6b3b&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+
+                <p class="muted" style="margin-top: 0.5rem;">
+                    Follow on SoundCloud for more music.
                 </p>
             </article>
+        </section>
+
+
+        <article class="card track-notes">
+            <h3>About This Track</h3>
+            <p>
+                “City After Midnight” started as a piano loop I recorded on my phone.
+                It grew into a full track with layered horns, analog synths, and
+                chopped-up drum samples. The goal was to capture that feeling of
+                walking home way too late with headphones on.
+            </p>
+            <p>
+                I’m experimenting with more live trumpet and sax parts in future
+                releases, so expect a lot more horn-heavy music soon.
+            </p>
+        </article>
         </section>
 
         <!-- 3. Social links + extra picture -->
@@ -82,8 +89,8 @@
             </div>
 
             <div class="card wide-photo">
-                <div class="photo-placeholder">Wide photo of me / live show</div>
-            </div>
+                <img class="photo-placeholder" style="width:45rem; height:20rem;" src="/performance.png">
+            </img>
         </section>
 
         <!-- 4. Email list -->
@@ -104,7 +111,7 @@
     </main>
 
     <footer class="site-footer">
-        <p>© <span id="year-home"></span> Boston Geo. All rights reserved.</p>
+        <p>© <span id="year-home"></span> Boston Gies. All rights reserved.</p>
     </footer>
 
     <script>

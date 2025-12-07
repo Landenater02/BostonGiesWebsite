@@ -3,12 +3,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>Boston Geo – Updates</title>
+    <title>Boston Gies – Updates</title>
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
     <header class="site-header">
-        <div class="site-title">Boston Geo</div>
+        <div class="site-title">Boston Gies</div>
         <nav class="site-nav">
             <a href="index.html">Home</a>
             <a href="about.html">About Me</a>
@@ -56,42 +56,51 @@
 
             <!-- Right: Instagram widget -->
             <aside class="card instagram-card">
-                <h2>Instagram Widget</h2>
-                <p class="muted">
-                    This area is reserved for an Instagram embed – grid of recent posts
-                    or a single highlighted post.
-                </p>
-                <div class="instagram-placeholder">
-                    <div class="insta-square"></div>
-                    <div class="insta-square"></div>
-                    <div class="insta-square"></div>
-                    <div class="insta-square"></div>
-                    <div class="insta-square"></div>
-                    <div class="insta-square"></div>
-                </div>
-                <a href="#" class="more-link">View on Instagram →</a>
-            </aside>
-        </section>
+                <h2>Instagram</h2>
 
-        <!-- Bottom: Email list -->
-        <section class="section email-section">
-            <div class="card email-card">
-                <h2>Email List</h2>
-                <p>
-                    Want updates without having to fight the algorithm? Drop your email
-                    and I’ll send occasional notes about releases, shows, and works-in-progress.
+                <!-- Instagram Profile Badge -->
+                <div style="margin-bottom: 1rem;">
+                    <a href="https://www.instagram.com/bostongies/"
+                       target="_blank"
+                       style="text-decoration:none; color:#ff6b3b; font-weight:600; font-size:1rem;">
+                        @bostongies on Instagram →
+                    </a>
+                </div>
+
+                <!-- Latest Instagram Post Embed -->
+                <blockquote class="instagram-media"
+                            data-instgrm-permalink="https://www.instagram.com/bostongies/"
+                            data-instgrm-version="14"
+                            style="background:#000; border:1px solid #262636; border-radius:10px; margin:0 auto; max-width:350px; width:100%;"></blockquote>
+
+                <script async src="//www.instagram.com/embed.js"></script>
+
+                <p class="muted" style="margin-top:1rem;">
+                    Click to view more posts.
                 </p>
-                <form class="email-form">
-                    <label for="email-updates" class="sr-only">Email address</label>
-                    <input id="email-updates" type="email" placeholder="you@example.com" required />
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
-        </section>
-    </main>
+
+            </aside>
+
+
+            <!-- Bottom: Email list -->
+            <section class="section email-section">
+                <div class="card email-card">
+                    <h2>Email List</h2>
+                    <p>
+                        Want updates without having to fight the algorithm? Drop your email
+                        and I’ll send occasional notes about releases, shows, and works-in-progress.
+                    </p>
+                    <form class="email-form">
+                        <label for="email-updates" class="sr-only">Email address</label>
+                        <input id="email-updates" type="email" placeholder="you@example.com" required />
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </section>
+</main>
 
     <footer class="site-footer">
-        <p>© <span id="year-updates"></span> Boston Geo. All rights reserved.</p>
+        <p>© <span id="year-updates"></span> Boston Gies. All rights reserved.</p>
     </footer>
 
     <script>
