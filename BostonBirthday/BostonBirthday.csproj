@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\Boston.jpg" />
     <None Include="wwwroot\index.html" />
     <None Include="wwwroot\scripts.js" />
     <None Include="wwwroot\styles.css" />
